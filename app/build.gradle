@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    lintOptions {abortOnError false}
+
+    defaultConfig {
+        applicationId "net.stargw.fok"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 65
+        versionName "65"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace 'net.stargw.karma'
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "${applicationId}-${variant.buildType.name}-v${defaultConfig.versionName}.apk"
+            Task swTask = project.task("zzz${variant.name}", type: Copy) {
+                from output.outputFile.getParent()
+                into file("apks")
+                include output.outputFileName
+                rename(output.outputFileName, output.outputFileName)
+
+            }
+            variant.assemble.finalizedBy(swTask)
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+
+}
