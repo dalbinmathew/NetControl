@@ -5,7 +5,7 @@ NetControl is an application for Android that empowers users to regain control o
 
 
 ## Screenshots
-
+<div align="center">
 <img src=".\metadata\en-US\images\phoneScreenshots\1.jpg" alt="alt" style="width:200px;">
 <img src=".\metadata\en-US\images\phoneScreenshots\2.jpg" alt="alt" style="width:200px;">
 <img src=".\metadata\en-US\images\phoneScreenshots\3.jpg" alt="alt" style="width:200px;">
@@ -13,3 +13,4 @@ NetControl is an application for Android that empowers users to regain control o
 <img src=".\metadata\en-US\images\phoneScreenshots\5.jpg" alt="alt" style="width:200px;">
 <img src=".\metadata\en-US\images\phoneScreenshots\6.jpg" alt="alt" style="width:200px;">
 <img src=".\metadata\en-US\images\phoneScreenshots\7.jpg" alt="alt" style="width:200px;">
+</div>
